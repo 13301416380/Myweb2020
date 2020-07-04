@@ -11,4 +11,4 @@ spring:
       discovery:
         locator:
           enabled: true
-      enabled: true  #����
+      enabled: true   #开启
