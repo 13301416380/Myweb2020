@@ -1,0 +1,9 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: nacos-provide
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.132.136.153:8848
