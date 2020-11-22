@@ -1,0 +1,9 @@
+server:
+  port: 9120
+spring:
+  application:
+    name: redis-jedis
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.132.136.153:8848
