@@ -1,0 +1,9 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: user-provide
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.132.136.153:8850

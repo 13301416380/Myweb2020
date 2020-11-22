@@ -8,6 +8,11 @@
       <list>
         <option value="$PROJECT_DIR$/gateway1/pom.xml" />
         <option value="$PROJECT_DIR$/gateway2/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/provide/pom.xml" />
+        <option value="$PROJECT_DIR$/ioc/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-jedis/pom.xml" />
       </list>
     </option>
   </component>

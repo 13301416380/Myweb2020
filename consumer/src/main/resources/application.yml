@@ -1,0 +1,9 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: user-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.132.136.153:8849
