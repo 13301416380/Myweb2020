@@ -13,6 +13,9 @@
         <option value="$PROJECT_DIR$/provide/pom.xml" />
         <option value="$PROJECT_DIR$/ioc/pom.xml" />
         <option value="$PROJECT_DIR$/redis-jedis/pom.xml" />
+        <option value="$PROJECT_DIR$/zookeeper-curator/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/merchants/pom.xml" />
       </list>
     </option>
   </component>

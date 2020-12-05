@@ -6,8 +6,11 @@
       <module fileurl="file://$PROJECT_DIR$/gateway1/gateway1.iml" filepath="$PROJECT_DIR$/gateway1/gateway1.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway2/gateway2.iml" filepath="$PROJECT_DIR$/gateway2/gateway2.iml" />
       <module fileurl="file://$PROJECT_DIR$/ioc/ioc.iml" filepath="$PROJECT_DIR$/ioc/ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/merchants/merchants.iml" filepath="$PROJECT_DIR$/merchants/merchants.iml" />
       <module fileurl="file://$PROJECT_DIR$/provide/provide.iml" filepath="$PROJECT_DIR$/provide/provide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/rabbitmq/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis-jedis/redis-jedis.iml" filepath="$PROJECT_DIR$/redis-jedis/redis-jedis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper-curator/zookeeper-curator.iml" filepath="$PROJECT_DIR$/zookeeper-curator/zookeeper-curator.iml" />
     </modules>
   </component>
 </project>
