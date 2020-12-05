@@ -9,33 +9,38 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ioc" />
         <module name="provide" />
+        <module name="zookeeper-curator" />
         <module name="gateway2" />
         <module name="gateway1" />
+        <module name="rabbitmq" />
         <module name="redis-jedis" />
         <module name="consumer" />
+        <module name="merchants" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="consumer" target="1.8" />
-      <module name="demo" target="1.8" />
       <module name="gateway1" target="1.8" />
       <module name="gateway2" target="1.8" />
       <module name="ioc" target="1.8" />
+      <module name="merchants" target="1.8" />
       <module name="provide" target="1.8" />
+      <module name="rabbitmq" target="1.8" />
       <module name="redis-jedis" target="1.8" />
-      <module name="redisconsumer" target="1.8" />
+      <module name="zookeeper-curator" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="consumer" options="-parameters" />
-      <module name="demo" options="-parameters" />
       <module name="gateway1" options="-parameters" />
       <module name="gateway2" options="-parameters" />
       <module name="ioc" options="-parameters" />
+      <module name="merchants" options="-parameters" />
       <module name="provide" options="-parameters" />
+      <module name="rabbitmq" options="-parameters" />
       <module name="redis-jedis" options="-parameters" />
-      <module name="redisconsumer" options="-parameters" />
+      <module name="zookeeper-curator" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,0 +1,51 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: merchants
+  #nacos注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.132.136.153:8848
+  #redis集群
+  redis:
+    cluster:
+      nodes: 101.132.136.153:8001,106.14.127.161:8002,101.132.136.153:8003,101.132.136.153:8004,106.14.127.161:8005,101.132.136.153:8006
+      max-redirects: 6
+    password: abc123 #集群访问密码
+  session:
+    store-type: redis
+  #mycat 中间件集成 mysql主从复制数据源
+  datasource:
+    url: jdbc:mysql://106.14.127.161:8066/NJWEBDB
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+   #  devtools
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署aa
+      additional-paths: src/main #监控该目录下的文件修改
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+
+    #jpa:
+      # hibernate:
+    #  ddl-auto: create
+    # show-sql: true #显示sql语句
+    # database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+mybatis:
+  mapper-locations: classpath*:mappers/*.xml #xml文件
+  type-aliases-package: com.njcebbank.merchants.bo #实体类
+  configuration:
+    map-underscore-to-camel-case: true
+
+debug: true
+pagehelper:
+  helper-dialect: mysql #数据库方言
+  reasonable: true      #分页合理化
+  support-methods-arguments: true #是否支持接口参数来传递分页参数，默认false
+  page-size-zero: true #当设置为true的时候，如果pagesize设置为0（或RowBounds的limit=0），就不执行分页，返回全部结果
+  params: count=countSql
+

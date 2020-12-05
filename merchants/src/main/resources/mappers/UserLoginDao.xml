@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.njcebbank.merchants.dao.UserLoginDao">
+    <select id="userLogging" resultType="Userinfos" parameterType="java.util.Map">
+		SELECT u.id,u.userid,u.`password`,u.username,u.userstate FROM userinfos u
+		where u.userid=#{userid} and u.password=#{password} and u.userstate=1
+	</select>
+    <select id="userRole" resultType="UserRole" parameterType="java.util.Map">
+		SELECT ur.userid,ur.roleid,ur.state as userstate,r.rolename
+		FROM userrole ur
+		LEFT JOIN role r
+		ON ur.roleid = r.roleid
+	    WHERE  ur.userid=#{userid}
+	</select>
+    <select id="moduleRole" resultType="ModuleRole" parameterType="java.util.Map">
+		SELECT mr.merchanttypeid ,m.merchanttype,mr.roleid ,m.state FROM merchanttype m
+		LEFT JOIN merchanttyperole mr
+		ON  mr.merchanttypeid = m.id
+		WHERE mr.roleid=#{roleid}
+	</select>
+</mapper>
