@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.njcebbank.merchants.dao.MerchantDao">
-    <select id="getMerchantList" resultType="MerchantBo" parameterType="java.util.Map">
+	<!--查询特约商户-->
+	<select id="getMerchantList" resultType="MerchantBo" parameterType="java.util.Map">
 		select * from merchant t
 	</select>
+
+	<!--查询特约商户是否存在-->
+	<select id="isExistence" resultType="MerchantBo" parameterType="java.util.Map">
+		select * from merchant t
+		<where>
+			<if test="merchanttype != null">
+				merchanttype = #{merchanttype}
+			</if>
+			<if test="lat != null">
+				AND lat = #{lat}
+			</if>
+			<if test="lng != null">
+				AND lng = #{lng}
+			</if>
+		</where>
+	</select>
+
+	<!--查询特约商户是否存在-->
+	<insert id="addMerchants" parameterType="java.util.List" useGeneratedKeys="true">
+		INSERT INTO merchant   (merchanttype ,title,address,lng,lat,userid,adddate,phonenumber,isstate) VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+		(#{item.merchanttype},
+			#{item.title},
+			#{item.address},
+			#{item.lng},
+			#{item.lat},
+			#{item.userid},
+			#{item.adddate},
+			#{item.phonenumber},
+			#{item.isstate})
+			</foreach>
+	</insert>
 </mapper>

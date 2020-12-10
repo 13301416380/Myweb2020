@@ -2,9 +2,11 @@ package com.njcebbank.merchants.login;
 
 import com.njcebbank.merchants.annotation.UserRoles;
 import com.njcebbank.merchants.service.LoginService;
+import com.njcebbank.merchants.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,17 +22,20 @@ public class LoginResource {
 
 
     @RequestMapping(value = "/logging", method = RequestMethod.GET)
-    public Map<String, Object> logging(HttpSession httpSession, @RequestParam(value = "userid", required = true) String userid, @RequestParam(value = "password", required = true) String password) {
+    public Map<String, Object> logging(HttpServletRequest request, @RequestParam(value = "userid", required = true) String userid, @RequestParam(value = "password", required = true) String password) {
         Map<String, Object> result = new HashMap<>();
         Map<String, Object> loggingMap = loginService.logging(userid, password);
         if (loggingMap != null) {
-            httpSession.setAttribute("userid",userid);
-            httpSession.setAttribute("password",password);
+            String token = JWTUtil.sign(userid, password);
+            if (token != null) {
+                result.put("status", "success");
+                result.put("token", token);
+                result.put("message", "登录成功");
+            }
             result.put("data", loggingMap);
-            result.put("info", "success");
-            result.put("message", "登录成功");
+
         } else {
-            result.put("info", "error");
+            result.put("status", "error");
             result.put("message", "登录失败");
         }
         System.out.println(result);

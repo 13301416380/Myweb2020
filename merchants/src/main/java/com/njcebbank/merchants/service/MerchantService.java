@@ -14,4 +14,9 @@ import java.util.Map;
 public interface MerchantService {
     //查询所有商户信息
     public PageInfo<MerchantBo> getMerchantList(Map<String ,Object> map);
+    //查询是否存在商户
+    public  int isExistence(Map<String ,Object> map);
+    //批量添加特约商户
+    public int addMerchants(List<MerchantBo> list);
+
 }

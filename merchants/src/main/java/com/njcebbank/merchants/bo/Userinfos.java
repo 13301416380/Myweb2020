@@ -2,6 +2,7 @@ package com.njcebbank.merchants.bo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -15,7 +16,8 @@ public class Userinfos {
     private String userid;
     private String password;
     private String username;
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd") //前台传数据到后台
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone="GMT+8")// 后台传数据到前台
     private Date birthday;
     private int userstate;
 }

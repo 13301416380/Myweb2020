@@ -13,4 +13,8 @@ import java.util.Map;
 public interface MerchantDao {
     //查询所有商户信息
     public List<MerchantBo> getMerchantList(Map<String ,Object> map);
+    //判断是否存在特约商户
+    public List<MerchantBo> isExistence(Map<String, Object> map) ;
+    //批量添加特约商户
+    public int addMerchants(List<MerchantBo> list);
 }

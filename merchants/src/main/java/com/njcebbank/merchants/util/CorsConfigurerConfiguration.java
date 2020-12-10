@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @author：不许人间见白头 Time：2020/12/2 17:34
+ * 统一设置跨域请求
  */
 @Configuration
 public class CorsConfigurerConfiguration {
